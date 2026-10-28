@@ -34,7 +34,7 @@ pytest                            # pytest.ini đã set pythonpath=. và testpat
 ## Tiến độ (cập nhật 2026-10-28)
 Đã xong:
 - `GET /health` + test
-- `POST /api/v1/reviews/validate`: upload CSV, kiểm tra cột bắt buộc + test
+- `POST /api/v1/reviews/validate`: upload CSV (đọc `utf-8-sig`, `dtype=str`), bắt buộc `review_id` + `review_text`; thiếu cột thì trả 400; ô rỗng / ID trùng thì trả 200 với `status: has_issues` + `issues` (số dòng theo file CSV) + test
 - Tool `get_review_statistics(df)` trong `src/tools/review_statistics.py`: tổng số review, rating hợp lệ/không hợp lệ, điểm trung bình, phân bố rating + test
 
 Đang làm / tiếp theo (theo `docs/07_roadmap.md`):
@@ -45,8 +45,7 @@ pytest                            # pytest.ini đã set pythonpath=. và testpat
 - Sau đó: Docker, CI, deploy, README có metric
 
 ## Vấn đề đã biết
-- Route `/validate` đang yêu cầu cột `review` + `rating`, nhưng `docs/04_data_spec.md` và file CSV mẫu dùng `review_id` + `review_text` (`rating` là tuỳ chọn). Upload file mẫu sẽ bị báo lỗi thiếu cột. Cần thống nhất lại.
-- Thư mục chưa phải git repo, cần `git init` và commit thường xuyên.
+- Đã có git (nhánh `main`, commit đầu `ec176e0` ngày 2026-10-28) nhưng chưa push lên GitHub.
 
 ## Quyết định đã chốt
 - Taxonomy v0.1: `room`, `cleanliness`, `staff_service`, `value_price`, `sleep_noise`, `facilities`, `breakfast_food`, `location`, `booking_process`, `other`
