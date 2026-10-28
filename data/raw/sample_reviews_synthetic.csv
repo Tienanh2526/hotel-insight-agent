@@ -1,0 +1,5 @@
+﻿review_id,hotel_id,review_date,rating,language,review_text
+demo_001,hotel_demo_01,2026-05-10,2,vi,Phòng tắm chưa sạch và có mùi. Nhân viên tiếp nhận góp ý khá lịch sự.
+demo_002,hotel_demo_01,2026-05-11,4,en,"The staff were friendly, but the room was noisy at night."
+demo_003,hotel_demo_01,2026-05-12,5,vi,"Vị trí thuận tiện, bữa sáng ổn và phòng khá rộng."
+demo_004,hotel_demo_01,2026-05-13,2,en,"The bathroom did not seem clean, and the towels smelled musty."
